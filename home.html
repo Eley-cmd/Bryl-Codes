@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bryl Codes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a class="nav-logo" href="home.html">
+            <img src="assets/logo.png" alt="Bryl Codes Logo" data-fallback="icon-sibling" data-icon="fa-solid fa-code"
+                data-icon-color="var(--blue-glow)" data-icon-size="1.4rem" />
+            <span>Bryl <b>Codes</b></span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li class="has-dropdown">
+                <a href="offers.html">Offers <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                <ul class="dropdown">
+                    <li><a href="offers.html">Services</a></li>
+                    <li><a href="process.html">Our Process</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-inner">
+            <div class="hero-text">
+                <div class="hero-badge"><i class="fa-solid fa-circle-dot"></i> Available for Projects</div>
+                <h1 class="hero-title">
+                    We Build<br />
+                    <span class="accent">Digital</span><br />
+                    <span class="stroke">Excellence.</span>
+                </h1>
+                <p class="hero-desc">
+                    We're a two-person development team that combines disciplined engineering with creative
+                    craftsmanship. From robust web applications and business systems to sleek, high-performance
+                    websites — we build digital products that are clean, secure, and built to last.
+                </p>
+                <div class="hero-actions">
+                    <a href="projects.html" class="btn-primary"><i class="fa-solid fa-eye"></i> View Projects</a>
+                    <a href="contact.html" class="btn-outline"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hc-top">
+                        <div class="hc-dots"><span></span><span></span><span></span></div>
+                        <div class="hc-title">brylcodes.js</div>
+                    </div>
+                    <div class="hc-code">
+                        <div class="cm">// Bryl Codes</div>
+                        <div><span class="kw">const</span> team = {</div>
+                        <div>&nbsp;&nbsp;members: <span class="str">["Lewis", "Bryan"]</span>,</div>
+                        <div>&nbsp;&nbsp;<span class="fn">build</span>: <span class="kw">async</span> (idea) => {</div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">const</span> code = <span class="kw">await</span>
+                        </div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">craft</span>(idea);</div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span
+                                class="str">"excellence"</span>;</div>
+                        <div>&nbsp;&nbsp;}</div>
+                        <div>};</div>
+                        <div class="cm">// &gt; Building your vision...</div>
+                    </div>
+                    <div class="hc-bar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-section">
+        <div class="section-inner">
+            <div class="section-label">Why Choose Us</div>
+            <h2 class="section-title">What Sets Us Apart</h2>
+            <p class="section-sub">We're not a faceless agency — we're Lewis and Bryan, and here's why
+                working with a focused two-person team gives you the edge.</p>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <div class="why-name">Direct Developer Access</div>
+                    <p class="why-desc">No middlemen, no account managers. You talk directly to the developers
+                        building your product — faster decisions, zero miscommunication.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-lock"></i></div>
+                    <div class="why-name">Zero Outsourcing</div>
+                    <p class="why-desc">Every line of code is written in-house by our team. Your project
+                        never gets handed off to strangers — we own every pixel and function.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-infinity"></i></div>
+                    <div class="why-name">Full-Cycle Ownership</div>
+                    <p class="why-desc">From design to deployment to long-term maintenance, the same team
+                        handles everything. No handoffs, no gaps, no finger-pointing.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="why-name">Lean &amp; Cost-Efficient</div>
+                    <p class="why-desc">Small team means low overhead. You get senior-level engineering
+                        and real craftsmanship without the inflated agency pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="assets/logo.png" alt="Logo" data-fallback="hide" />
+                    <span>Bryl <b>Codes</b></span>
+                </div>
+                <div class="footer-socials">
+                    <div class="social-btn">
+                        <img src="assets/facebook.png" alt="Facebook" data-fallback="replace-parent"
+                            data-icon="fab fa-facebook-f" data-icon-color="var(--blue-light)" />
+                    </div>
+                    <div class="social-btn">
+                        <img src="assets/tiktok.png" alt="TikTok" data-fallback="replace-parent"
+                            data-icon="fab fa-tiktok" data-icon-color="var(--blue-light)" />
+                    </div>
+                    <div class="social-btn">
+                        <img src="assets/intagram.png" alt="Instagram" data-fallback="replace-parent"
+                            data-icon="fab fa-instagram" data-icon-color="var(--blue-light)" />
+                    </div>
+                    <div class="social-btn">
+                        <img src="assets/email.png" alt="Email" data-fallback="replace-parent"
+                            data-icon="fa-solid fa-envelope" data-icon-color="var(--blue-light)" />
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">&copy; 2026 Bryl Codes. All rights reserved.</div>
+                <div class="footer-links">
+                    <a href="home.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="offers.html">Offers</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
