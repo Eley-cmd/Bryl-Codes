@@ -10,17 +10,28 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+
 // Close nav on link click (mobile) — skip dropdown parent links
 document.querySelectorAll('.nav-links a').forEach(a => {
     if (a.closest('.has-dropdown') && a.parentElement.classList.contains('has-dropdown')) return;
-    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    a.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+        if (hamburger) hamburger.classList.remove('open');
+        closeAllDropdowns();
+    });
 });
 
-// Hamburger menu toggle
-const hamburger = document.getElementById('hamburger');
 if (hamburger) {
     hamburger.addEventListener('click', () => {
-        document.getElementById('navLinks').classList.toggle('open');
+        const navLinks = document.getElementById('navLinks');
+        const isOpen = navLinks.classList.toggle('open');
+        hamburger.classList.toggle('open');
+        // If closing, reset dropdowns
+        if (!isOpen) {
+            closeAllDropdowns();
+        }
     });
 }
 
@@ -30,10 +41,19 @@ document.querySelectorAll('.has-dropdown > a').forEach(link => {
         if (window.innerWidth <= 900) {
             e.preventDefault();
             e.stopPropagation();
+            // Close other open dropdowns
+            document.querySelectorAll('.has-dropdown.open').forEach(dd => {
+                if (dd !== link.parentElement) dd.classList.remove('open');
+            });
             link.parentElement.classList.toggle('open');
         }
     });
 });
+
+// Close dropdowns when nav closes
+function closeAllDropdowns() {
+    document.querySelectorAll('.has-dropdown.open').forEach(dd => dd.classList.remove('open'));
+}
 
 // ─── Nav scroll effect ───
 const nav = document.querySelector('nav');
@@ -88,7 +108,7 @@ if (heroCard && heroVisual && window.innerWidth > 900) {
     });
 }
 
-// ─── Scroll reveal (IntersectionObserver) ───
+// ─── Scroll reveal (IntersectionObserver) — infinite ───
 const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
 
 if (revealElements.length > 0) {
@@ -96,7 +116,8 @@ if (revealElements.length > 0) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                revealObserver.unobserve(entry.target);
+            } else {
+                entry.target.classList.remove('active');
             }
         });
     }, {
@@ -166,13 +187,14 @@ function autoReveal() {
         }
     });
 
-    // Re-observe new elements
-    document.querySelectorAll('.reveal:not(.active), .reveal-left:not(.active), .reveal-right:not(.active), .reveal-scale:not(.active)').forEach(el => {
+    // Re-observe new elements — infinite (no unobserve)
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
+                } else {
+                    entry.target.classList.remove('active');
                 }
             });
         }, {
