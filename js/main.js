@@ -247,14 +247,14 @@ document.querySelectorAll('img[data-fallback]').forEach(function (img) {
         if (this.dataset.handled) return;
         this.dataset.handled = 'true';
 
-        var type = this.dataset.fallback;
-        var icon = this.dataset.icon || '';
-        var color = this.dataset.iconColor || '';
-        var size = this.dataset.iconSize || '';
-        var style = '';
+        let type = this.dataset.fallback;
+        let icon = this.dataset.icon || '';
+        let color = this.dataset.iconColor || '';
+        let size = this.dataset.iconSize || '';
+        let style = '';
         if (color) style += 'color:' + color + ';';
         if (size) style += 'font-size:' + size + ';';
-        var iconHtml = icon ? '<i class="' + icon + '"' + (style ? ' style="' + style + '"' : '') + '></i>' : '';
+        let iconHtml = icon ? '<i class="' + icon + '"' + (style ? ' style="' + style + '"' : '') + '></i>' : '';
 
         switch (type) {
             case 'replace-parent':
